@@ -60,7 +60,27 @@ interface WorldProps {
 
 let numbersOfRings = [0];
 
-export function Globe({ globeConfig, data }: WorldProps) {
+const DefaultGlobeConfig: GlobeConfig = {
+  pointSize: 1,
+  atmosphereColor: "#ffffff",
+  showAtmosphere: true,
+  atmosphereAltitude: 0.1,
+  polygonColor: "rgba(255,255,255,0.7)",
+  globeColor: "#1d072e",
+  emissive: "#000000",
+  emissiveIntensity: 0.1,
+  shininess: 0.9,
+  arcTime: 2000,
+  arcLength: 0.9,
+  rings: 1,
+  maxRings: 3,
+  ambientLight: "#ffffff",
+  directionalLeftLight: "#ffffff",
+  directionalTopLight: "#ffffff",
+  pointLight: "#ffffff",
+};
+
+export function Globe({ globeConfig = DefaultGlobeConfig, data = [] }: { globeConfig?: GlobeConfig; data?: Position[] }) {
   const [globeData, setGlobeData] = useState<
     | {
         size: number;
@@ -118,21 +138,22 @@ export function Globe({ globeConfig, data }: WorldProps) {
     let points = [];
     for (let i = 0; i < arcs.length; i++) {
       const arc = arcs[i];
-      const rgb = hexToRgb(arc.color) as { r: number; g: number; b: number };
-      points.push({
-        size: defaultProps.pointSize,
-        order: arc.order,
-        color: (t: number) => `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${1 - t})`,
-        lat: arc.startLat,
-        lng: arc.startLng,
-      });
-      points.push({
-        size: defaultProps.pointSize,
-        order: arc.order,
-        color: (t: number) => `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${1 - t})`,
-        lat: arc.endLat,
-        lng: arc.endLng,
-      });
+    const rgb = hexToRgb(arc.color) as { r: number; g: number; b: number };
+    const arcPoint = {
+      size: defaultProps.pointSize,
+      order: arc.order,
+      color: (t: number) => `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${1 - t})`,
+    };
+    points.push({
+      ...arcPoint,
+      lat: arc.startLat,
+      lng: arc.startLng,
+    });
+    points.push({
+      ...arcPoint,
+      lat: arc.endLat,
+      lng: arc.endLng,
+    });
     }
 
     // remove duplicates for same lat and lng
@@ -173,7 +194,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
       .arcStartLng((d) => (d as { startLng: number }).startLng * 1)
       .arcEndLat((d) => (d as { endLat: number }).endLat * 1)
       .arcEndLng((d) => (d as { endLng: number }).endLng * 1)
-      .arcColor((e: any) => (e as { color: string }).color)
+      .arcColor((e: any) => e.color)
       .arcAltitude((e) => {
         return (e as { arcAlt: number }).arcAlt * 1;
       })
@@ -279,12 +300,12 @@ export function World(props: WorldProps) {
 }
 
 export function hexToRgb(hex: string) {
-  var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+  const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
   hex = hex.replace(shorthandRegex, function (m, r, g, b) {
     return r + r + g + g + b + b;
   });
 
-  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result
     ? {
         r: parseInt(result[1], 16),

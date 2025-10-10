@@ -1,3 +1,5 @@
+import { i } from "motion/react-client";
+
 export const navItems = [
   { name: "About", link: "#About" },
   { name: "Experience", link: "#Experience" },
@@ -46,7 +48,7 @@ export const gridItems = [
   },
   {
     id: 4,
-    title: "Resume Download",
+    title: "Grab My Resume",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
@@ -79,13 +81,26 @@ export const socialMedia = [
   {
     id: 1,
     img: "/icons/github.svg",
+    url: "https://github.com/stash-724",
   },
   {
     id: 2,
     img: "icons/twit.svg",
+    url: "https://x.com/ankush_soni_",
   },
   {
     id: 3,
     img: "icons/link.svg",
+    url: "https://www.linkedin.com/in/ankush-soni/",
   },
+  {
+    id: 4,
+    img: "icons/leetcode.svg",
+    url: "https://leetcode.com/u/1ankushsoni",
+  },
+  {
+    id: 5,
+    img: "icons/email.svg",
+    url: "mailto:1ankushsoni@gmail.com",
+  }
 ];

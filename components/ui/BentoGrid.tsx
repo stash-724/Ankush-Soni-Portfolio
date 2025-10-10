@@ -131,30 +131,59 @@ export const BentoGridItem = ({
           </BackgroundGradientAnimation>
         )}
 
-        <div className={cn( titleClassName,"group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10")}>
-          
-          <div className={`font-sans text-lg lg:text-4xl max-w-96 font-bold z-10`}> {title} </div>
-          {subtitle && <div className="font-sans text-lg md:text-lg lg:text-xl text-[#C1C2D3] z-10">{subtitle}</div>}
-          <div className="font-sans md:max-w-48 md:text-sm lg:text-base text-md text-[#C1C2D3] z-10"> {description} </div>
+        <div
+          className={cn(
+            titleClassName,
+            "group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10"
+          )}
+        >
+          <div
+            className={`font-sans gap-2 text-lg lg:text-3xl max-w-96 font-bold z-10`}
+          >
+            {" "}
+            {title}{" "}
+          </div>
+          {subtitle && (
+            <div className="font-sans text-lg md:text-lg lg:text-xl text-[#C1C2D3] z-10">
+              {subtitle}
+            </div>
+          )}
+          <div className="font-sans md:max-w-48 md:text-sm lg:text-base text-md text-[#C1C2D3] z-10">
+            {" "}
+            {description}{" "}
+          </div>
           {linksIcon && (
             <div className="flex gap-2 mt-2 z-10">
               {linksIcon.map((icon, index) => (
                 <a key={index} href={icon.url} target="_blank">
-                  <img src={icon.icon} alt={`social-icon-${index}`} className="w-6 h-6 hover:opacity-75 transition-opacity" />
+                  <img
+                    src={icon.icon}
+                    alt={`social-icon-${index}`}
+                    className="w-6 h-6 hover:opacity-75 transition-opacity"
+                  />
                 </a>
               ))}
             </div>
           )}
-           {/* for the github 3d globe */}
+          {/* for the github 3d globe */}
           {id === 2 && <GridGlobe />}
           {id === 4 && (
-            <MagicButton
-              title={"Download Resume"}
-              icon={<IoDownloadOutline />}
-              position="left"
-              handleClick={handleDownload}
-              otherClasses="!bg-[#161A31]"
-            />
+            <div className="mt-5 relative">
+              <div
+                className={`absolute -bottom-5 right-0 ${
+                  copied ? "block" : "block"
+                }`}
+              >
+             </div>
+
+              <MagicButton
+                title={"Download Now"}
+                icon={<IoDownloadOutline />}
+                position="left"
+                handleClick={handleDownload}
+                otherClasses="!bg-[#161A31]"
+              />
+            </div>
           )}
           {/* Tech stack list div */}
           {id === 3 && (
@@ -188,10 +217,6 @@ export const BentoGridItem = ({
           )}
           {id === 6 && (
             <div className="mt-5 relative">
-              {/* button border magic from tailwind css buttons  */}
-              {/* add rounded-md h-8 md:h-8, remove rounded-full */}
-              {/* remove focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 */}
-              {/* add handleCopy() for the copy the text */}
               <div
                 className={`absolute -bottom-5 right-0 ${
                   copied ? "block" : "block"

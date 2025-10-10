@@ -139,7 +139,7 @@ const Component = React.forwardRef<HTMLDivElement, ComponentProps>(
               {/* Links: Site */}
               <div
                 className={cn(
-                  'sm:flex hidden p-4 rounded-full transition-all duration-500 ease-in-out',
+                  'flex p-4 rounded-full transition-all duration-500 ease-in-out',
                 )}
               >
                 <a
@@ -149,10 +149,10 @@ const Component = React.forwardRef<HTMLDivElement, ComponentProps>(
                   className={cn('transition-opacity hover:opacity-80',
                    activeImage?.id === image.id
                     ? 'mix-blend-difference z-20 bg-white text-black p-4 rounded-full'
-                    : '')}
+                    : 'sm:p-4 p-2 rounded-full')}
                   title={image.liveLink ? "View Live Site" : "View GitHub Repository"}
                 >
-                  <LuMoveUpRight className={cn(iconSizeClasses[size])} />
+                  <LuMoveUpRight className={cn(iconSizeClasses[size], 'sm:text-current')} />
                 </a>
               </div>
 

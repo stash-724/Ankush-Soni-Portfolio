@@ -33,12 +33,12 @@ const Hero = () => {
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
             words="Transforming Ideas into Digital Experiences"
           />
-          <p className="text-center mt-4 md:text-lg lg:text-2xl">
+          <p className="text-center my-4 md:text-lg lg:text-2xl">
             Hi, I&apos;m Ankush, a Software Engineer based in India.
           </p>
-          <a href="#about">
+          <a href="#About">
             <MagicButton
-              title="Show my Work"
+              title="Learn More"
               position="right"
               icon={<FaLocationArrow />}
             />

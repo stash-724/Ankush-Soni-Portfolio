@@ -71,14 +71,14 @@ export const BentoGridItem = ({
   };
 
   const handleCopy = () => {
-    const text = "hsu@jsmastery.pro";
+    const text = "1ankushsoni@gmail.com ";
     navigator.clipboard.writeText(text);
     setCopied(true);
   };
 
   const handleDownload = () => {
     window.open(
-      "https://drive.google.com/file/d/1aBMOPy3cNk2XMFWm9aaa4qX56-SJHV-E/view",
+      "https://drive.google.com/file/d/1WETI1174oIUHSp7Q7BVjx53AWsONafXW/view",
       "_blank"
     );
   };

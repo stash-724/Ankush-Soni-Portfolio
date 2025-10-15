@@ -29,7 +29,7 @@ export const experienceData = [
     ),
   },
   {
-    title: "Aug 2024 — Sep 2024",
+    title: "Aug 2024 — Sep 2025",
     content: (
       <div className="mb-10">
         <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base">
@@ -39,14 +39,16 @@ export const experienceData = [
         <ul className="list-disc pl-5 mt-3 space-y-1 text-neutral-600 dark:text-neutral-400">
           <li>
             Built a mobile-first business website using{" "}
-            <strong>React, Tailwind CSS, and JavaScript</strong> within 30 days.
+            <strong>React, Tailwind CSS, and JavaScript</strong> boosting lead conversions by 20%.
           </li>
           <li>
-            Improved client lead conversion by ~20% and achieved{" "}
-            <strong>88 Lighthouse performance score</strong>.
+             Applied performance best practices{" "}
+            <strong>(image compression, asset bundling)</strong>, achieving a Lighthouse score of{" "}
+            <strong>88+</strong>.
           </li>
           <li>
-            Partnered with client to enhance UI/UX, increasing engagement by 25%.
+            Collaborated with clients to deliver iterative UX enhancements, improving engagement by{" "}
+            <strong> 25% </strong>.
           </li>
         </ul>
       </div>

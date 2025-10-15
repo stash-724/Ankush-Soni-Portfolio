@@ -78,7 +78,7 @@ export const BentoGridItem = ({
 
   const handleDownload = () => {
     window.open(
-      "https://drive.google.com/file/d/1WETI1174oIUHSp7Q7BVjx53AWsONafXW/view",
+      "https://drive.google.com/file/d/1fwjQ-CK5EMktEmp6zf6ZN2gaiEQCq7N1/view",
       "_blank"
     );
   };

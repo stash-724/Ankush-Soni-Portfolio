@@ -34,7 +34,7 @@ const Hero = () => {
             words="Transforming Ideas into Digital Experiences"
           />
           <p className="text-center my-4 md:text-lg lg:text-2xl text-gray-700 dark:text-gray-300">
-            Hi, I'm Ankush, a Software Engineer based in India.
+            Hi, I&apos;m Ankush, a Software Engineer based in India.
           </p>
           <a href="#About">
             <MagicButton

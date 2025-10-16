@@ -1,4 +1,4 @@
-import { i } from "motion/react-client";
+// import { i } from "motion/react-client";
 
 export const navItems = [
   { name: "About", link: "#About" },

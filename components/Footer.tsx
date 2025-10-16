@@ -21,7 +21,7 @@ const Footer = () => {
           presence to the next level?
         </h1>
         <p className="text-gray-600 dark:text-gray-400 md:mt-10 my-5 text-center">
-          Reach out to me today and let's discuss how I can help you
+          Reach out to me today and let&apos;s discuss how I can help you
           achieve your goals.
         </p>
         <a href="mailto:1ankushsoni@gmail.com" target="_blank">

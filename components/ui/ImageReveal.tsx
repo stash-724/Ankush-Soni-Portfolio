@@ -187,7 +187,7 @@ const Component = React.forwardRef<HTMLDivElement, ComponentProps>(
               <img
                 src={image.src}
                 alt={image.alt}
-                className="absolute top-1/2 left-[65%] transform -translate-x-1/2 -translate-y-1/2bg-gray-950 object-cover pointer-events-none z-10 w-[320px] h-[240px] rounded-lg transition-opacity duration-300 opacity-100"
+                className="absolute top-1/2 left-[65%] transform -translate-x-1/2 -translate-y-1/2 bg-gray-950 object-cover pointer-events-none z-10 w-[320px] h-[240px] rounded-lg transition-opacity duration-300 opacity-100"
               />
             )}
           </div>

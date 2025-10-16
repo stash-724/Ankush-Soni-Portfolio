@@ -77,9 +77,9 @@ const Component = React.forwardRef<HTMLDivElement, ComponentProps>(
     }, []);
 
     const variantClasses = {
-      default: 'bg-white dark:bg-black',
-      'blue-theme': 'dark:bg-gradient-to-b from-blue-900 from-10% to-blue-950 to-100% bg-blue-100',
-      'green-theme': 'dark:bg-gradient-to-b from-green-900 from-10% to-green-950 to-100% bg-green-100',
+      default: 'bg-black',
+      'blue-theme': 'bg-gradient-to-b from-blue-900 from-10% to-blue-950 to-100% bg-blue-100',
+      'green-theme': 'bg-gradient-to-b from-green-900 from-10% to-green-950 to-100% bg-green-100',
     };
 
     const sizeClasses = {
@@ -130,7 +130,7 @@ const Component = React.forwardRef<HTMLDivElement, ComponentProps>(
                   h2SizeClasses[size],
                   activeImage?.id === image.id
                     ? 'mix-blend-difference z-20 text-gray-300'
-                    : 'text-gray-700 dark:text-gray-300'
+                    : 'text-gray-300'
                 )}
               >
                 {image.alt}
@@ -157,7 +157,7 @@ const Component = React.forwardRef<HTMLDivElement, ComponentProps>(
               </div>
 
               <div
-                className={`h-[2px] dark:bg-white bg-black absolute bottom-0 left-0 transition-all duration-300 ease-linear ${
+                className={`h-[2px] bg-white absolute bottom-0 left-0 transition-all duration-300 ease-linear ${
                   activeImage?.id === image.id ? 'w-full' : 'w-0'
                 }`}
               />
@@ -173,7 +173,7 @@ const Component = React.forwardRef<HTMLDivElement, ComponentProps>(
                   ) : (
                     <span
                       key={i}
-                      className="text-xs bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded text-gray-700 dark:text-gray-300"
+                      className="text-xsbg-gray-700 px-2 py-1 rounded text-gray-300"
                     >
                       {tech}
                     </span>
@@ -187,7 +187,7 @@ const Component = React.forwardRef<HTMLDivElement, ComponentProps>(
               <img
                 src={image.src}
                 alt={image.alt}
-                className="absolute top-1/2 left-[65%] transform -translate-x-1/2 -translate-y-1/2 dark:bg-gray-950 bg-white object-cover pointer-events-none z-10 w-[320px] h-[240px] rounded-lg transition-opacity duration-300 opacity-100"
+                className="absolute top-1/2 left-[65%] transform -translate-x-1/2 -translate-y-1/2bg-gray-950 object-cover pointer-events-none z-10 w-[320px] h-[240px] rounded-lg transition-opacity duration-300 opacity-100"
               />
             )}
           </div>

@@ -23,18 +23,18 @@ const Hero = () => {
       </div>
       <div className="flex justify-center relative my-20 z-10">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
-          <h2 className="uppercase tracking-widest text-xs text-ceter text-blue-100 max-w-80">
-            From Algorithms to Aesthetics
-          </h2>
-          <h2 className="uppercase tracking-widest text-xs text-ceter text-blue-100 max-w-80">
-            Full-Stack Thinking in Every Pixel
-          </h2>
+        <h2 className="uppercase tracking-widest text-xs text-center text-gray-600 dark:text-gray-300 max-w-80">
+          From Algorithms to Aesthetics
+        </h2>
+        <h2 className="uppercase tracking-widest text-xs text-center text-gray-600 dark:text-gray-300 max-w-80">
+          Full-Stack Thinking in Every Pixel
+        </h2>
           <TextGenerateEffect
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
             words="Transforming Ideas into Digital Experiences"
           />
-          <p className="text-center my-4 md:text-lg lg:text-2xl">
-            Hi, I&apos;m Ankush, a Software Engineer based in India.
+          <p className="text-center my-4 md:text-lg lg:text-2xl text-gray-700 dark:text-gray-300">
+            Hi, I'm Ankush, a Software Engineer based in India.
           </p>
           <a href="#About">
             <MagicButton

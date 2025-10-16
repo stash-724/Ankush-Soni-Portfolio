@@ -26,18 +26,15 @@ export default function RootLayout({
     <html lang="en">
         
 
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          disableTransitionOnChange
         >
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
         {children}
         </ThemeProvider>
-      </body>
+      </body> 
     </html>
   );
 }
